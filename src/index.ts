@@ -1,12 +1,18 @@
-import express from 'express';
-import routes from './routes';
-const app = express();
-const port =3000;
 
-app.listen(port,()=>{
-   console.log(`server is running on http://localhost:${port}`);
+import path from 'path';
+import routes from './routes/api/index';
+import express from 'express';
+
+const app = express();
+const port = 3001;
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use('/api/images', routes);
+
+
+app.listen(port, () => {
+  console.log(`server is running on http://localhost:${port}`);
 });
 
-
-
-app.use('/api',routes);
+export default app;

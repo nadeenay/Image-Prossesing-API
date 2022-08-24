@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier --config .prettierrc 'src/**/*.js' --write",
+    "prettier": "prettier --config .prettierrc src/**/*.ts --write",
     "lint": "eslint src/index.ts",
     "build": "npx tsc",
     "jasmine": "jasmine",
@@ -27,6 +27,8 @@
     "@types/jasmine": "^4.0.3",
     "@types/nodemon": "^1.19.2",
     "@types/prettier": "^2.7.0",
+    "@types/sharp": "^0.30.5",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "eslint": "^8.22.0",
@@ -39,8 +41,16 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express-fileupload": "^1.4.0",
+    "@types/morgan": "^1.9.3",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
     "jasmin": "^0.0.2",
-    "nodemon": "^2.0.19"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19",
+    "sharp": "^0.30.7"
   }
 }
