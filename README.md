@@ -6,7 +6,6 @@ it's a simple image processing API used to resize images .
 {baseUrl}/api/images/filename=imgName&width=requiredWidth&height=requiredHeight
 ```
 ### Steps to run the project 
-## Scripts to run 
 ```
 1 - clone the project
 2 - npm install --> to install required packages.
