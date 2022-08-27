@@ -34,7 +34,12 @@ const validUrl = (
     (imgname + '_' + `${width}` + '_' + `${height}.jpg`) as string
   );
 
-  if (imgname === undefined || width === undefined || height === undefined || !fs.existsSync(fileInPath)) {
+  if (
+    imgname === undefined ||
+    width === undefined ||
+    height === undefined ||
+    !fs.existsSync(fileInPath)
+  ) {
     res.status(400).send('Wrong url');
   } else if (fs.existsSync(fileOutPath)) {
     res.status(200).sendFile(fileOutPath);
@@ -43,4 +48,3 @@ const validUrl = (
   }
 };
 export default validUrl;
-
