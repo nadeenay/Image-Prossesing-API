@@ -1,13 +1,12 @@
 import express, { Request, Response } from 'express';
 import validUrl from './middlewares/validate';
-import Exist from './middlewares/cache';
 import path from 'path';
 import sharp from 'sharp';
 import { promises as fs } from 'fs';
 
 const routes = express.Router();
 routes.use(express.static(path.join(__dirname, '..', '..', 'public')));
-routes.get('/', validUrl, Exist, async (req: Request, res: Response) => {
+routes.get('/', validUrl, async (req: Request, res: Response) => {
   try {
     //if the URL valid and the file doesn't exist , then resize
     const imgname: unknown = req.query.filename;
@@ -19,12 +18,14 @@ routes.get('/', validUrl, Exist, async (req: Request, res: Response) => {
       '..',
       '..',
       '..',
+      '..',
       'public',
       'images',
       (imgname + '.jpg') as string
     );
     const fileOutPath = path.join(
       __dirname,
+      '..',
       '..',
       '..',
       '..',
